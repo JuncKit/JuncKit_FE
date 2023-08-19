@@ -4,5 +4,5 @@ const { persistAtom } = recoilPersist();
 
 export const MapState = atom({
     key: 'MapState',
-    default: 0,
+    default: "사하구",
 });
