@@ -2,9 +2,12 @@ import { TestData } from './service/TestService';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import Map from './components/Map';
-// import Chart from './components/Chart';
+// import BarChart from './components/ChartGraph';
+import { useRecoilValue } from 'recoil';
+import { MapState } from './recoil/JunckitState';
 
 function App() {
+    const MapStates = useRecoilValue(MapState);
     useEffect(() => {
         TestData().then((response) => {
             console.log(response);
@@ -28,6 +31,7 @@ function App() {
         width: 650px;
         height: 341px;
     `;
+    console.log(MapStates);
 
     return (
         <>
@@ -42,7 +46,6 @@ function App() {
                 <Map />
             </TopBoxWrapper>
 
-            {/* <Chart /> */}
             <div className="App">서버 띄우자</div>
         </>
     );
